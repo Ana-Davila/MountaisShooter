@@ -9,7 +9,7 @@ from code.Const import WIN_WIDTH, COLOR_ORANGE, COLOR_WHITE, MENU_OPTION, COLOR_
 class Menu:
     def __init__(self, window):
         self.window = window
-        self.surf = pygame.image.load('./asset/MenuBg.png')
+        self.surf = pygame.image.load('./asset/MenuBg.png').convert_alpha()
         self.rect = self.surf.get_rect(left=0, top=0)
 
     def run(self, ):
@@ -18,7 +18,7 @@ class Menu:
         pygame.mixer_music.play(-1)
 
         while True:
-            
+
             #DRAW IMAGES
             self.window.blit(source=self.surf, dest=self.rect)
             self.menu_text(50, "Mountain", (COLOR_ORANGE), ((WIN_WIDTH / 2), 70))
